@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.env
+.venv/
+venv/
+gk9_scores.db
+*.sqlite3
