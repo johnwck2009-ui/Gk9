@@ -236,6 +236,6 @@ def run_bot():
     application.run_polling(drop_pending_updates=True)
 
 if __name__ == "__main__":
-    threading.Thread(target=run_bot, daemon=True).start()
     port = int(os.getenv("PORT", "10000"))
-    app_web.run(host="0.0.0.0", port=port)
+    threading.Thread(target=lambda: app_web.run(host="0.0.0.0", port=port), daemon=True).start()
+    run_bot()
