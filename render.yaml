@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: gk9-whos-that-player
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    healthCheckPath: /
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: DB_PATH
+        value: gk9_scores.db
